@@ -1,0 +1,33 @@
+spring:
+  data:
+    mongodb:
+      host: data.luopc.com
+      port: 27017
+      database: drs
+      username: admin
+      password: Luopc2021
+      authentication-database: drs
+      auto-index-creation: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  data:
+    mongodb:
+      database: test_db
+      username: test_user
+      password: Test@123456
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: uat

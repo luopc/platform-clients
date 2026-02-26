@@ -1,9 +1,8 @@
 spring:
-  cloud:
-    nacos:
-      discovery:
-        metadata:
-          context-path: ${server.servlet.context-path}
+  rabbitmq:
+    host: data.luopc.com
+    port: 5672
+    publisher-returns: true
 
 ---
 spring:
@@ -12,12 +11,9 @@ spring:
       on-profile: dev
   # rabbitmq
   rabbitmq:
-    host: data.luopc.com
-    port: 5672
     username: dev
     password: Robin2023
     virtualHost: dev
-    publisher-returns: true
 
 ---
 spring:
@@ -26,8 +22,6 @@ spring:
       on-profile: uat
   # rabbitmq
   rabbitmq:
-    host: data.luopc.com
-    port: 5672
     username: uat
     password: Robin2023
     virtualHost: uat

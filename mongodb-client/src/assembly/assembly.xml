@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>config</id>
+    <formats>
+        <!--支持 zip，tar，tar.gz，tar.bz2，jar，dir，war 等 -->
+        <format>zip</format>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory></outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <excludes>
+                <exclude>*.formatted</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>

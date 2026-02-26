@@ -1,0 +1,21 @@
+spring:
+  activemq:
+    broker-url: tcp://data.luopc.com:61616
+    user: admin
+    password: Luopc2021
+    pool:
+      enabled: true
+      max-connections: 50
+      idle-timeout: 30000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: uat

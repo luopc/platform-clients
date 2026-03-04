@@ -10,7 +10,8 @@ NC='\033[0m' # No Color
 
 # 打印帮助信息
 usage() {
-  echo "Usage: $0 [release|snapshot]"
+  echo "Usage: $0 [release|snapshot|local]"
+  echo "  local      - Build and install package"
   echo "  release    - Build and release a new version"
   echo "  snapshot   - Build and deploy a snapshot version (default)"
   exit 1
@@ -25,8 +26,8 @@ else
 fi
 start_time=$(date +%s)
 # 参数校验
-if [ "$BUILD_TYPE" != "release" ] && [ "$BUILD_TYPE" != "snapshot" ]; then
-  echo -e "${RED}Error: Invalid build type argument${NC}"
+if [ "$BUILD_TYPE" != "release" ] && [ "$BUILD_TYPE" != "snapshot" ] && [ "$BUILD_TYPE" != "local" ]; then
+  echo -e "${RED}Error: Invalid build type argument: $BUILD_TYPE${NC}"
   usage
 fi
 
@@ -97,6 +98,12 @@ elif [ "$BUILD_TYPE" = "snapshot" ]; then
   end_time=$(date +%s)
   echo -e "${YELLOW}[INFO] Deployed snapshot version: ${VERSION}, total duration time：$((end_time - start_time))s${NC}"
   echo -e "${GREEN}deploy -p {package} -v $VERSION -h data${NC}"
+elif [ "$BUILD_TYPE" = "local" ]; then
+  echo -e "${GREEN}Testing Snapshot Version${NC}"
+  if ! mvn -B clean install -Pdev; then
+    echo -e "${RED}Error: Snapshot build failed${NC}"
+    exit 1
+  fi
 else
   echo -e "${RED}Error: Invalid build type '$BUILD_TYPE'${NC}"
   usage

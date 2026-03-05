@@ -13,7 +13,6 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.boot.autoconfigure.amqp.RabbitProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
 
 /**
  * @author by Robin
@@ -78,11 +77,11 @@ public class RabbitCommonConfig {
         contentTypeDelegatingMessageConverter.addDelegate("html/text", textMessageConverter);
         contentTypeDelegatingMessageConverter.addDelegate("xml/text", textMessageConverter);
         contentTypeDelegatingMessageConverter.addDelegate("text/plain", textMessageConverter);
-        contentTypeDelegatingMessageConverter.addDelegate(MediaType.APPLICATION_XML_VALUE, textMessageConverter);
+        contentTypeDelegatingMessageConverter.addDelegate("application/xml", textMessageConverter);
 
         Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
         contentTypeDelegatingMessageConverter.addDelegate("json", jackson2JsonMessageConverter);
-        contentTypeDelegatingMessageConverter.addDelegate(MediaType.APPLICATION_JSON_VALUE, jackson2JsonMessageConverter);
+        contentTypeDelegatingMessageConverter.addDelegate("application/json", jackson2JsonMessageConverter);
 
         return contentTypeDelegatingMessageConverter;
     }

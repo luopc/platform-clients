@@ -12,18 +12,11 @@
     <description>Distributed tracing integration with SkyWalking and Micrometer</description>
 
     <dependencies>
-        <!-- Common Core -->
-        <dependency>
-            <groupId>com.luopc.platform.boot</groupId>
-            <artifactId>common-core</artifactId>
-        </dependency>
-
         <!-- Spring Boot Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
         <!-- Micrometer Tracing -->
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -35,7 +28,6 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-
         <!-- SkyWalking -->
         <dependency>
             <groupId>org.apache.skywalking</groupId>
@@ -47,7 +39,6 @@
             <artifactId>apm-toolkit-logback-1.x</artifactId>
             <version>${skywalking.version}</version>
         </dependency>
-
         <!-- Zipkin Reporter -->
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
@@ -59,14 +50,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

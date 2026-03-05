@@ -1,7 +1,6 @@
 package com.luopc.platform.clients.amq.convertor;
 
 
-import com.luopc.platform.web.common.core.util.SequenceIdUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.amqp.core.Message;
@@ -13,6 +12,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.UUID;
 
 /**
  * @author by Robin
@@ -33,7 +33,7 @@ public class ImageMessageConverter implements MessageConverter {
     public Object fromMessage(Message message) throws MessageConversionException {
         System.out.println("====JPGMessageConverter====");
         byte[] body = message.getBody();
-        String fileName = SequenceIdUtil.shortId().toString();
+        String fileName = UUID.randomUUID().toString();
         String path = "/Users/naeshihiroshi/Desktop/file/" + fileName + ".jpg";
         File file = new File(path);
         try {

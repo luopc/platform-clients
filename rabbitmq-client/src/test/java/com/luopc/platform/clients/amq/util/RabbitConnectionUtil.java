@@ -1,5 +1,6 @@
 package com.luopc.platform.clients.amq.util;
 
+import cn.hutool.core.lang.UUID;
 import com.rabbitmq.client.ConnectionFactory;
 
 
@@ -15,6 +16,10 @@ public class RabbitConnectionUtil {
         //rabbitmq默认虚拟机名称为“/”，虚拟机相当于一个独立的mq服务器
         factory.setVirtualHost("test");
         return factory;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(UUID.fastUUID());
     }
 
 }

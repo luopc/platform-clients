@@ -15,7 +15,6 @@ import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
@@ -78,7 +77,7 @@ public class RabbitApplicationTests {
         log.info("order 2 json: " + json);
 
         MessageProperties jsonProperties = new MessageProperties();
-        jsonProperties.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        jsonProperties.setContentType("application/json");
         jsonProperties.getHeaders().put("__TypeId__", "order");
         Message josonMessage = new Message(json.getBytes(), jsonProperties);
         rabbitTemplate.send(RabbitMQConfig.SPRING_TEST_EXCHANGE, "spring.abc", josonMessage);
@@ -86,7 +85,7 @@ public class RabbitApplicationTests {
         order = OrderBuilder.build();
         json = mapper.writeValueAsString(order);
         MessageProperties objectProperties = new MessageProperties();
-        objectProperties.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        objectProperties.setContentType("application/json");
         objectProperties.getHeaders().put("__TypeId__", "order");
         Message orderMessage = new Message(json.getBytes(), objectProperties);
         log.info("order 2 json: " + json);
@@ -105,7 +104,7 @@ public class RabbitApplicationTests {
         log.info("order 2 json: " + json);
 
         MessageProperties jsonProperties = new MessageProperties();
-        jsonProperties.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        jsonProperties.setContentType("application/json");
         jsonProperties.getHeaders().put("__TypeId__", "order");
         Message josonMessage = new Message(json.getBytes(), jsonProperties);
         rabbitTemplate.send(RabbitMQConfig.SPRING_TEST_EXCHANGE, "spring.abc", josonMessage);
@@ -124,7 +123,7 @@ public class RabbitApplicationTests {
         log.info("order 2 json: " + json);
 
         MessageProperties jsonProperties = new MessageProperties();
-        jsonProperties.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        jsonProperties.setContentType("application/json");
         jsonProperties.getHeaders().put("__TypeId__", "java.util.List");
         jsonProperties.getHeaders().put("__ContentTypeId__", "order");
 
@@ -141,7 +140,7 @@ public class RabbitApplicationTests {
         log.info("order 2 json: " + json);
 
         MessageProperties objectProperties = new MessageProperties();
-        objectProperties.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        objectProperties.setContentType("application/json");
         objectProperties.getHeaders().put("__TypeId__", "order");
         Message orderMessage = new Message(json.getBytes(), objectProperties);
 

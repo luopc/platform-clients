@@ -1,7 +1,7 @@
 package com.luopc.platform.clients.amq.test;
 
+import cn.hutool.core.lang.UUID;
 import com.luopc.platform.clients.amq.util.RabbitConnectionUtil;
-import com.luopc.platform.web.common.core.util.SequenceIdUtil;
 import com.rabbitmq.client.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -113,7 +113,7 @@ public class G_RPCQueueTest {
             //自动生成对列名,非持久,独占,自动删除
             String replyQueueName = channel.queueDeclare().getQueue();
             //生成关联id
-            String corrId = String.valueOf(SequenceIdUtil.nextId());
+            String corrId = String.valueOf(UUID.fastUUID());
             System.out.println("[" + param + "] generate correlationId = " + corrId);
             /*设置两个参数:
              * 1. 请求和响应的关联id

@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -148,9 +147,9 @@ public class RabbitMQConfig {
         convert.addDelegate("html/text", textConvert);
         convert.addDelegate("xml/text", textConvert);
         convert.addDelegate("text/plain", textConvert);
-        convert.addDelegate(MediaType.APPLICATION_XML_VALUE, textConvert);
+        convert.addDelegate("application/xml", textConvert);
         convert.addDelegate("json", jsonConvert);
-        convert.addDelegate(MediaType.APPLICATION_JSON_VALUE, jsonConvert);
+        convert.addDelegate("application/json", jsonConvert);
 
         adapter.setDefaultListenerMethod("onMessage");
         adapter.setMessageConverter(convert);

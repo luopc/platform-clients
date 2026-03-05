@@ -3,9 +3,9 @@ spring:
     mongodb:
       host: data.luopc.com
       port: 27017
-      database: drs
+      database: admin
       username: admin
-      password: Luopc2021
+      password: ENC(XBbkk5H8Z/2ANkIT3XoI52j9dwZcaEEN)
       authentication-database: drs
       auto-index-creation: true
 
@@ -13,12 +13,12 @@ spring:
 spring:
   config:
     activate:
-      on-profile: test
+      on-profile: local
   data:
     mongodb:
-      database: test_db
+      database: admin
       username: test_user
-      password: Test@123456
+      password: ENC(jvCX2Zho1QQxzX8UT8qUQf6t9DZRN0oL)
 
 ---
 spring:

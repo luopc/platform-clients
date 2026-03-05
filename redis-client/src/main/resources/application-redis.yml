@@ -20,7 +20,7 @@ spring:
   data:
     redis:
       host: data.luopc.com
-      password: Luopc2021
+      password: ENC(lJj6pQyJNSlCmmeTFptSg2hx0NKetqPG)
       port: 7077
 
 ---
@@ -31,7 +31,7 @@ spring:
   # 数据库连接信息
   data:
     redis:
-      password: Luopc2021
+      password: ENC(Vh+Yef7zOTQh1zuk55HChAF1iJ3C7BUT)
       cluster:
         max-redirects: 3
         nodes:

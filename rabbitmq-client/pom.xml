@@ -7,7 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>rabbitmq-client</artifactId>
-
+    <properties>
+        <!-- Message Queue -->
+        <spring.amqp.version>3.1.2</spring.amqp.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

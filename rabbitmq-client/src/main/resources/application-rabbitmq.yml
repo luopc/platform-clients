@@ -12,7 +12,7 @@ spring:
   # rabbitmq
   rabbitmq:
     username: dev
-    password: Robin2023
+    password: ENC(4/DJz6Mkcn4kZIU4a/kUA322GCy1gqlB)
     virtualHost: dev
 
 ---
@@ -23,5 +23,5 @@ spring:
   # rabbitmq
   rabbitmq:
     username: uat
-    password: Robin2023
+    password: ENC(9WmnsYixW2/E7iWFnyETYxzM3VK/tqqd)
     virtualHost: uat

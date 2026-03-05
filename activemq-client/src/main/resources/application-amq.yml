@@ -2,7 +2,7 @@ spring:
   activemq:
     broker-url: tcp://data.luopc.com:61616
     user: admin
-    password: Luopc2021
+    password: ENC(5S/5twfeVphDkiBQnnfKsEiuIXnynpJI)
     pool:
       enabled: true
       max-connections: 50

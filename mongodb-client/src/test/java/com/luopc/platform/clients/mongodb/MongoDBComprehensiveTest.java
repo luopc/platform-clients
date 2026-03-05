@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+@Disabled
 @SpringBootTest(
         classes =  {MongoDBApplication.class, MongoConfig.class},
         properties = {

@@ -4,7 +4,27 @@ spring:
       discovery:
         metadata:
           context-path: ${spring.application.name}
-          #context-path: ${server.servlet.context-path}
+        server-addr: app.luopc.com:8848,data.luopc.com:8848,core.luopc.com:8848
+        username: nacos
+
+        #context-path: ${server.servlet.context-path}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  # 服务发现
+  cloud:
+    nacos:
+      password: ENC(hCnv7xrkjPYoxZXbLZ8QAk0lsjt6SQL6)
+      discovery:
+        group: local
+        namespace: local
+      config:
+        group: local
+        namespace: local
+
 ---
 spring:
   config:
@@ -13,15 +33,13 @@ spring:
   # 服务发现
   cloud:
     nacos:
+      password: ENC(YmWU8yNK1OWrqnfeQq0nVOMBba37YfEL)
       discovery:
-        server-addr: app.luopc.com:8848,data.luopc.com:8848,core.luopc.com:8848
+        group: dev
         namespace: dev
-        register:
-          group-name: DEFAULT_GROUP
       config:
-        server-addr: app.luopc.com:8848,data.luopc.com:8848,core.luopc.com:8848
+        group: dev
         namespace: dev
-        group: DEFAULT_GROUP
 
 ---
 spring:
@@ -31,12 +49,11 @@ spring:
   # 服务发现
   cloud:
     nacos:
+      password: ENC(hbJgW4YivoXPjo4NbZWGMV+G+B+3Oi5N)
       discovery:
-        server-addr: app.luopc.com:8848,data.luopc.com:8848,core.luopc.com:8848
+        group: uat
         namespace: uat
-        register:
-          group-name: DEFAULT_GROUP
       config:
-        server-addr: app.luopc.com:8848,data.luopc.com:8848,core.luopc.com:8848
+        group: uat
         namespace: uat
-        group: DEFAULT_GROUP
+

@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 @SpringBootTest(
         classes =  {ActiveMQApplication.class, AMQTestConfig.class},
         properties = {

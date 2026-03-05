@@ -27,6 +27,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.luopc.platform.boot</groupId>
+            <artifactId>common-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

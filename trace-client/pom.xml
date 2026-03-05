@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.luopc.platform.client</groupId>
         <artifactId>platform-clients</artifactId>
-        <version>1.0.7</version>
+        <version>1.0.8-SNAPSHOT</version>
     </parent>
     <artifactId>trace-client</artifactId>
     <packaging>jar</packaging>
